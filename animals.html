@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Project - Zoo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0fff0, #e6f5e6);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #2a9d8f, #228b22);
+            color: white;
+            padding: 13px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #logo-container img {
+            width: 30px;
+            height: auto;
+            display: block;
+        }
+
+        #logo-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 6px 10px;
+            background-color: #32cd32;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #1e7969;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        nav ul li a:visited {
+            color: white; 
+        }
+
+        a.animal-link {
+            color: blue; 
+            text-decoration: none;
+        }
+
+        a.animal-link:visited,
+        a.animal-link:active {
+            color: blue; 
+        }
+
+        main {
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #228b22;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            width: 300px;
+            padding: 10px 10px 15px;  
+            min-height: auto;  
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 70%; 
+            height: auto;  
+            aspect-ratio: 4 / 3; 
+            object-fit: contain;  
+        }
+
+
+        .card h3 {
+            margin: 5px 0 0;
+            color: #2a9d8f;
+            font-size: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .info-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .info-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="animals.html">Animal Introduction</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Animal Information</h1>
+
+        <div class="info-container">
+            <div class="card">
+                <img src="images/Bear.jpg" alt="Bear">
+                <h3><a href="Animals/Bear.html" class="animal-link">Bear</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/capra-aegagrus-hircus.jpg" alt="Capra-aegagrus-hircus">
+                <h3><a href="Animals/Capra-aegagrus-hircus.html" class="animal-link">Capra-aegagrus-hircus</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/cervus-nippon.jpg" alt="Cervus-nippon">
+                <h3><a href="animals/Cervus-nippon.html" class="animal-link">Cervus-nippon</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/crocodilia.JPG" alt="Crocodilia">
+                <h3><a href="animals/Crocodilia.html" class="animal-link">Crocodilia</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/cygnus.jpg" alt="Cygnus">
+                <h3><a href="animals/Cygnus.html" class="animal-link">Cygnus</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/delphinidae.jpg" alt="Delphinidae">
+                <h3><a href="animals/Delphinidae.html" class="animal-link">Delphinidae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/elephantidae.jpg" alt="Elephantidae">
+                <h3><a href="animals/Elephantidae.html" class="animal-link">Elephantidae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/folivora.jpg" alt="Folivora">
+                <h3><a href="animals/Folivora.html" class="animal-link">Folivora</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/fox.jpg" alt="Fox">
+                <h3><a href="animals/Fox.html" class="animal-link">Fox</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Giraffe.jpg" alt="Giraffe">
+                <h3><a href="Animals/Giraffe.html" class="animal-link">Giraffe</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/gorilla.jpg" alt="Gorilla">
+                <h3><a href="animals/Gorilla.html" class="animal-link">Gorilla</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/hippopotamus-amphibius.jpg" alt="Hippopotamus-amphibius">
+                <h3><a href="animals/Hippopotamus-amphibius.html" class="animal-link">Hippopotamus-amphibius</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/kangaroo.jpg" alt="Kangaroo">
+                <h3><a href="animals/Kangaroo.html" class="animal-link">Kangaroo</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/koala.jpg" alt="Koala">
+                <h3><a href="animals/Koala.html" class="animal-link">Koala</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Leopard.jpg" alt="Leopard">
+                <h3><a href="animals/Leopard.html" class="animal-link">Leopard</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Lion.jpg" alt="Lion">
+                <h3><a href="animals/Lion.html" class="animal-link">Lion</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Panda.jpg" alt="Panda">
+                <h3><a href="animals/Panda.html" class="animal-link">Panda</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/pavo.jpg" alt="Pavo">
+                <h3><a href="animals/Pavo.html" class="animal-link">Pavo</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/phocidae.jpg" alt="Phocidae">
+                <h3><a href="animals/Phocidae.html" class="animal-link">Phocidae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/phoenicopteridae.jpg" alt="Phoenicopteridae">
+                <h3><a href="animals/Phoenicopteridae.html" class="animal-link">Phoenicopteridae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Pongo.jpg" alt="Pongo">
+                <h3><a href="animals/Pongo.html" class="animal-link">Pongo</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/raccoon.jpg" alt="Raccoon">
+                <h3><a href="animals/Raccoon.html" class="animal-link">Raccoon</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/rhinocerotidae.jpg" alt="Rhinocerotidae">
+                <h3><a href="animals/Rhinocerotidae.html" class="animal-link">Rhinocerotidae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/sciuridae.jpg" alt="Sciuridae">
+                <h3><a href="animals/Sciuridae.html" class="animal-link">Sciuridae</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/sphenisciformes.jpg" alt="Sphenisciformes">
+                <h3><a href="animals/Sphenisciformes.html" class="animal-link">Sphenisciformes</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/strigiformes.jpg" alt="Strigiformes">
+                <h3><a href="animals/Strigiformes.html" class="animal-link">Strigiformes</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/sus-scrofa.JPG" alt="Sus-scrofa">
+                <h3><a href="animals/Sus-scrofa.html" class="animal-link">Sus-scrofa</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Tiger.jpg" alt="Tiger">
+                <h3><a href="animals/Tiger.html" class="animal-link">Tiger</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Wolf.jpg" alt="Wolf">
+                <h3><a href="animals/Wolf.html" class="animal-link">Wolf</a></h3>
+            </div>
+            <div class="card">
+                <img src="images/Zebra.jpg" alt="Zebra">
+                <h3><a href="animals/Zebra.html" class="animal-link">Zebra</a></h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

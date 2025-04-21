@@ -1,0 +1,1 @@
+ALTER TABLE users ADD COLUMN last_score INTEGER DEFAULT 0;

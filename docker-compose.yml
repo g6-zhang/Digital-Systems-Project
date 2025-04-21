@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  zoo-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/app:/app/app
+      - ./images:/app/images
+      - ./styles:/app/styles
+      - ./animals:/app/animals
+      - ./index.html:/app/index.html
+      - ./login.html:/app/login.html
+      - ./map.html:/app/map.html
+      - ./register.html:/app/register.html
+      - ./reset-password.html:/app/reset-password.html
+      - ./tickets.html:/app/tickets.html
+      - ./animals.html:/app/animals.html
+      - ./.env:/app/.env
+    depends_on:
+      zoo-db:
+        condition: service_healthy
+    command: >
+      sh -c "sleep 5 && uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload"
+
+  zoo-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: zoo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - zoo-project_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  zoo-project_db_data:
