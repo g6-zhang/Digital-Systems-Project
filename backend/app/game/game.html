@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Quiz Game</title>
+    <link rel="stylesheet" href="/game-static/game.css">
+
+    <style>
+        #home-btn-wrapper {
+          position: fixed;
+          bottom: 30px;
+          width: 100%;
+          text-align: center;
+          z-index: 1000;
+        }
+        
+        #home-btn {
+          background-color: #3498db;
+          color: white;
+          padding: 12px 24px;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s;
+        }
+        
+        #home-btn:hover {
+          background-color: #2980b9;
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="game-container">
+        <div class="quiz-box" id="game-area" style="display: none;">
+            <h2>🐾 Animal Quiz Game</h2>
+            <img id="animal-image" src="" alt="Animal Image">
+            <div id="question-text"></div>
+            <div class="options">
+                <button onclick="selectAnswer('A')">A</button>
+                <button onclick="selectAnswer('B')">B</button>
+                <button onclick="selectAnswer('C')">C</button>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🎮 How to Play</h3>
+            <p>There are five animal-related questions. Each question has three options.</p>
+            <p>
+                Answer all <strong style="color: gold;">5 questions correctly</strong> in one of your first two attempts today to earn a <strong style="color: gold;">one-time ticket discount</strong>!
+              </p>              
+            <p style="color: red;">You can play more, but only the first three tries per day count for the discount.</p>
+
+        </div>
+    </div>
+
+    <div id="result-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2 id="modal-title">Game Over</h2>
+          <p id="modal-message"></p>
+          <p id="modal-status"></p>
+          <p id="modal-countdown" style="color: #f39c12;"></p>
+          <button id="play-again-btn">Play Again</button>
+        </div>
+      </div>
+
+      <div id="home-btn-wrapper">
+        <a href="/home" id="home-btn">🏠 Home</a>
+      </div>
+            
+    <script src="/game/game.js"></script>
+</body>
+</html>
