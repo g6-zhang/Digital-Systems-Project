@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/hippopotamus-amphibius.jpg" alt="Hippopotamus-amphibius">
+            <p>Rhinoceroses (scientific name: Rhinocerotidae) are large herbivorous mammals belonging to the order Perissodactyla (odd-toed ungulates). They are primarily distributed in Africa and Southeast Asia and are the largest odd-toed ungulates, as well as the second-largest land mammals after elephants.
+            </p>
+            <p>Rhinoceroses are known for their short legs, stocky bodies, and thick, wrinkled skin. Their body length ranges from 2.2 to 4.5 meters, with a shoulder height of 1.2 to 2 meters. They weigh between 2,800 and 3,000 kilograms.Their skin is thick and rough, forming folded plates around the shoulders and back. Their hair is sparse and coarse, with some species being almost completely hairless. They have large, elongated heads, short thick necks, and extended upper lips for feeding.
+            </p>
+            <p>One of their most distinctive features is their solid, keratin-based horns, which can regrow if broken. Most rhinoceroses have one or two horns, though some female individuals may lack horns. They lack canine teeth, and their tail is short and thin. Their body color varies between yellow-brown, brown, black, or gray.
+            </p>
+            <p>Except for the white rhinoceros, all other species are critically endangered. The Javan rhinoceros is the rarest, with only about 50 individuals remaining. Black rhinoceros populations range from 10,000 to 30,000 individuals.Rhinoceroses face severe threats from habitat destruction, poaching for their horns (especially in East Asia), and trophy hunting tourism in Western countries. Conservation efforts are critical to ensuring their survival.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

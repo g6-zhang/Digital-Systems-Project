@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <base href="/">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/capra-aegagrus-hircus.jpg" alt="Capra-aegagrus-hircus">
+            <p>The goat (Capra aegagrus hircus), also known as summer goat, black goat, or billy goat, is one of the earliest domesticated livestock, similar to sheep. The ancestors of domestic goats were wild goats, which were domesticated approximately 10,500 years ago in the Zagros Mountains of Iran. Humans initially domesticated goats for easier access to their wool, meat, and milk.
+            </p>
+            <p>Goat hides were frequently used as water or wine pouches for travel and camping until the Middle Ages. In some regions, goat skin was also used to produce parchment for writing.
+            </p>
+            <p>Even today, goat meat and goat milk remain important dietary staples. In India, goat meat is often referred to as "mutton" or "lamb". Goat hides are still used to make kid gloves and other clothing items. Certain breeds of goats can produce wool fibers, including cashmere and mohair, which are used to manufacture sweaters and other woolen garments.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

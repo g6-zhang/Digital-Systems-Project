@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/Zebra.jpg" alt="Zebra">
+            <p>The zebra (scientific name: Hippotigris) is a member of the horse family (Equidae) and the genus Equus, native to Africa, and is easily recognized by its black-and-white striped patterns, which are unique to each individual.There are three extant zebra species: the plains zebra (Equus quagga), which is the most common; the mountain zebra (Equus zebra), which is adapted to rocky and arid regions; and the Grévy’s zebra (Equus grevyi), also called the imperial zebra, which has particularly narrow stripes.
+            </p>
+            <p>Zebras are social animals that typically live in herds, with smaller groups consisting of one dominant male and several females, while larger herds can include hundreds of individuals. Unlike horses, zebras are not truly domesticated and live a migratory lifestyle, rather than occupying fixed territories.
+            </p>
+            <p>Adult zebras typically grow to 2.3 meters in length, with a shoulder height of about 1.5 meters, and weigh between 300 and 400 kilograms, although the heaviest individuals can exceed 410 kilograms. In addition to their distinctive stripes, zebras also have an erect mane, which serves as protection against both predators and environmental factors.
+            </p>
+            <p>Zebras inhabit various ecosystems, including tropical savannas, open grasslands, and arid regions, but human activities such as hunting and habitat destruction have significantly impacted their populations. While the Grévy’s zebra and mountain zebra are classified as endangered species, the plains zebra has a relatively stable population, with the exception of the quagga, a subspecies that went extinct in the 19th century.Despite their unique appearance and adaptability, zebras remain vulnerable to environmental threats, making conservation efforts essential for their continued survival.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/gorilla.jpg" alt="Georgia">
+            <p>Gorillas are the collective name for all species within the genus Gorilla, which belongs to the family Hominidae in the order Primates. They are the largest primates and possess intelligence second only to humans and chimpanzees. Gorillas inhabit tropical forests near the equator in Africa and are herbivorous.
+            </p>
+            <p>As of 2006, there has been ongoing debate about whether gorillas should be classified as a single species or two distinct species. Below the species level, they are divided into four to five subspecies.Gorillas share 92% to 98% of their DNA sequence with humans, making them the closest living relatives of humans after the two species of chimpanzees (Pan troglodytes and Pan paniscus). Additionally, they are the largest and strongest living primates.
+            </p>
+            <p>Gorillas' closest relatives are chimpanzees and humans, as all three species belong to the Hominidae family. They share a common ancestor, from which they diverged approximately 7 million years ago.The genetic difference between humans and gorillas is only about 1.6% on average, although there are additional differences in gene copy numbers.
+            </p>
+            <p>During the Ice Age, as forests shrank and populations became isolated, these gorillas evolved into two distinct species and their respective subspecies from a single ancestral gorilla population.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

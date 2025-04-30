@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/koala.jpg" alt="Koala">
+            <p>The koala (scientific name: Phascolarctos cinereus), also known as the tree bear in Hong Kong and the no-tail bear in Singapore and Taiwan, is a marsupial species endemic to Australia. It is exclusively found in eucalyptus forests at low elevations across eastern Australia, specifically in Queensland, New South Wales, South Australia, and Victoria.
+            </p>
+            <p>The koala is a nocturnal animal with a slow metabolism, requiring 17 to 20 hours of sleep per day. When awake, it spends most of its time feeding. Koalas are solitary by nature and exhibit minimal social interactions, with an average of only 15 minutes of social behavior per day.
+            </p>
+            <p>Koalas are susceptible to various diseases, with two of the most common being conjunctivitis and "wet bottom" syndrome, a condition affecting the kidneys and urinary system. Other health issues include respiratory infections, skull diseases, and parasitic infestations.
+            </p>
+            <p>The bacterium Chlamydia is often considered a major cause of koala illnesses, and researchers are actively studying its impact on koala populations. It has been observed that koalas are more prone to infections when they live in overcrowded areas or regions with limited food resources.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

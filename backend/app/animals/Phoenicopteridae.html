@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/phoenicopteridae.jpg" alt="Phoenicopteridae">
+            <p>The flamingo, also known as the firebird or red crane, refers to bird species within the family Phoenicopteridae (scientific name: Phoenicopteridae), which comprises three genera and six species. Flamingos are large wading birds primarily found in Africa and Central and South America, with populations also present in parts of India and Southern Europe. While flamingos are mainly distributed in subtropical regions, they are occasionally observed in temperate and colder climates.
+            </p>
+            <p>The flamingo is a large wading bird with a long, S-shaped curved neck. It stands 1 to 1.4 meters tall, with a wingspan of 1 to 1.6 meters. Its body is covered in white feathers with a reddish hue, but its red coloration is not natural; instead, it comes from the carotenoids found in the plankton and crustaceans it consumes.
+            </p>
+            <p>One of the most distinctive features of the flamingo is its uniquely shaped beak, where the upper mandible is smaller than the lower mandible, an adaptation that helps it filter-feed in shallow waters.
+            </p>
+            <p>During the breeding season, each female lays a single egg in a mound-shaped nest, with the egg measuring approximately 78–90 mm in length and weighing 115–140 grams. The incubation period lasts 27 to 31 days, and flamingos reach sexual maturity between 3 and 5 years of age.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

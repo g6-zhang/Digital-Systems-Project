@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/folivora.jpg" alt="Folivora">
+            <p>Sloths (scientific name: Folivora), sometimes mistakenly referred to as "tree otters", are a group of mammals belonging to the superorder Xenarthra and the order Pilosa. 
+            </p>
+            <p>Sloths are notoriously slow-moving animals, traveling at a speed of 4 meters per minute (0.24 km/h) in trees and only 2 meters per minute (0.12 km/h) on the ground. Due to their sluggish movement, they are vulnerable to predators when on land. However, they are excellent swimmers, which allows them to escape danger when necessary.
+            </p>
+            <p>There are six extant species of sloths, found in the tropical rainforests of Central and South America. Although two-toed and three-toed sloths appear similar, they have notable differences. Contrary to their names, all modern sloths have three toes on their hind limbs; the primary difference is that two-toed sloths have only two fingers on their forelimbs.
+            </p>
+            <p>Sloths' coarse fur provides an ideal habitat for symbiotic green algae, which helps them camouflage in their environment. Interestingly, sloths sometimes eat the algae growing on their fur as a nutritional supplement. These algae also serve as a food source for sloth moths, some of which are exclusively found on sloths.
+            </p>
+            <p>Some species of giant ground sloths, known as "ground sloths", are now extinct. Among them, the largest species, Megatherium, could grow up to 6 meters (20 feet) long, comparable in size to a modern African elephant.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

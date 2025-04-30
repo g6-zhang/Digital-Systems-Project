@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/kangaroo.jpg" alt="Kangaroo">
+            <p>Kangaroos are marsupial animals belonging to the family Macropodidae, meaning "big foot," and the term typically refers to the four largest species: the red kangaroo (Macropus rufus), the eastern grey kangaroo (Macropus giganteus), the western grey kangaroo (Macropus fuliginosus), and the antilopine kangaroo (Osphranter antilopinus), which are native to Australia and New Guinea, with the total population across New South Wales, Queensland, South Australia, and Western Australia recorded at approximately 42.8 million in 2019, a decline from 53.2 million in 2013, according to Australian government statistics.
+            </p>
+            <p>The term "kangaroo", like "wallaroo" and "wallaby", refers to a paraphyletic group of species within the family Macropodidae, with all three terms used to classify members of this family based on size, where the largest species are called "kangaroos", the smallest species are referred to as "wallabies", and "wallaroos" denote medium-sized species, while tree kangaroos, which belong to a distinct group within the same family, are adapted to an arboreal lifestyle and inhabit the tropical rainforests of New Guinea, northeastern Queensland, and nearby islands.
+            </p>
+            <p>The English name "kangaroo" is said to have originated from a miscommunication between European explorers and the Guugu Yimidhirr people, an Indigenous Australian group, where the word "gangurru" supposedly meant "I don't know".
+            </p>
+            <p>On June 11, 1770, during his first voyage, British explorer Captain James Cook ran aground on the Great Barrier Reef off the northeastern coast of Australia, forcing his crew to repair their ship near the Endeavour River (now Cooktown Harbor).
+            </p>
+            <p>During this time, botanist Joseph Banks observed a strange animal (later identified as the eastern grey kangaroo) and asked the local Guugu Yimidhirr people about its name. Since they did not understand English, they responded with "gangurru," meaning "I don't know" in their language. However, Banks misinterpreted this as the animal’s name, and the term "kangaroo" was later adopted into English.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

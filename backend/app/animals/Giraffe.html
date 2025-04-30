@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/Giraffe.jpg" alt="Giraffe">
+            <p>The giraffe (scientific name: Giraffa), also known as the kirin deer, is a genus of mammals belonging to the order Artiodactyla. It is native to Africa and is the tallest living land mammal in the world. Traditionally, giraffes were considered a single species, with the Nubian giraffe (Giraffa camelopardalis) as the type species, which is listed under Appendix II of CITES as a protected species. However, using different taxonomic methods, modern giraffes can be classified into one to eight distinct species. Additionally, fossil evidence has revealed the existence of seven extinct giraffe species.
+            </p>
+            <p>Giraffes are characterized by their long necks, long legs, ossicones (horn-like structures), and unique fur patterns. Genetically, they are most closely related to the okapi, as both belong to the family Giraffidae.
+            </p>
+            <p>Their distribution extends from Chad in the north to South Africa in the south, from Niger in the west to Somalia in the east. They primarily inhabit savannas and open woodlands, feeding mainly on leaves, fruits, and flowers of woody plants, especially from the Mimosoideae subfamily. Their long necks allow them to access vegetation unavailable to most other herbivores. Despite their height, giraffes are preyed upon by lions, leopards, spotted hyenas, and African wild dogs.
+            </p>
+            <p>Giraffes have been an important cultural symbol throughout history, frequently appearing in art, literature, and media. The International Union for Conservation of Nature (IUCN) classifies giraffes as a vulnerable species, and they have already gone locally extinct in some regions.
+            </p>
+            <p>Giraffes are commonly found in national parks and wildlife reserves. As of 2010, over 1,600 giraffes were kept in zoos worldwide. By 2015, the global giraffe population was estimated to be around 97,500 individuals.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <base href="/">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/crocodilia.JPG" alt="Crocodilia">
+            <p>The order Crocodilia (Crocodilia), commonly known as crocodiles, consists of large carnivorous reptiles belonging to the phylum Chordata and clade Sauropsida. They are primarily found in tropical and subtropical regions, inhabiting rivers, lakes, and coastal areas. Currently, there are 25 extant species.
+            </p>
+            <p>Crocodiles are cold-blooded animals and apex predators in the food chain. Except for Europe and Antarctica, wild crocodile populations are distributed across low-latitude regions on major continents. They prefer to inhabit rivers, lakes, swamps, and other water-rich environments, as well as humid areas in hilly regions.
+            </p>
+            <p>Crocodiles are ambush predators. When they detect prey, they submerge their bodies underwater, leaving only their heads exposed. They then slowly approach the target before launching a sudden attack, using their powerful jaws to seize the prey and drag it into the water to drown it.
+            </p>
+            <p>They employ a technique known as the "death roll", which helps dismember prey into smaller pieces. This involves biting down tightly on the prey with their strong jaws and then spinning their entire body to tear off chunks of flesh for easier swallowing.
+            </p>
+            <p>Crocodiles are also capable of food sharing, allowing nearby crocodiles to feed on the same prey. This cooperative behavior enhances the survival of the species as a whole.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

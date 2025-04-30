@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/Wolf.jpg" alt="Wolf">
+            <p>The wolf (scientific name: Canis lupus), also known as the gray wolf, prairie wolf, or grey coyote, is a mammal belonging to the family Canidae. It shares the same species classification as domestic dogs (Canis lupus familiaris) and is the largest living member of the Canidae family.
+            </p>
+            <p>Historically, wolves were one of the most widespread mammals on Earth, inhabiting North America, Europe, and Asia. However, due to habitat destruction and conflicts with humans, wolves have been eradicated from much of Western Europe, Mexico, and large parts of the United States. While they primarily inhabit wilderness areas and remote regions, they are not strictly limited to such environments.
+            </p>
+            <p>Currently, wolves are mainly found in Asia, Europe, North America, and parts of the Middle East, particularly in temperate zones of the Northern Hemisphere. They play a crucial role in maintaining ecosystem balance, and their ability to adapt to diverse habitats reflects their high adaptability. Wolves thrive in a variety of ecosystems, including forests, deserts, mountains, tundra, temperate grasslands, Siberian taiga, and open plains.
+            </p>
+            <p>Wolves are highly social predators, living in packs that typically consist of a mated pair and their offspring, occasionally including adopted juvenile wolves. They are apex predators in their ecosystems, meaning they have few natural enemies. In their habitats, only humans and tigers pose a significant threat to them.Wolves are pack hunters, often working together to take down large prey such as deer, elk, and bison. However, due to their tendency to prey on livestock, they were heavily hunted by humans until the late 20th century. As a result, some subspecies, such as the Japanese wolf and the Newfoundland wolf, have gone extinct. While many wolf subspecies have been identified, their exact classification remains uncertain.
+            </p>
+            <p>The wolf is listed under Appendix II of CITES (Convention on International Trade in Endangered Species of Wild Fauna and Flora), meaning it is protected from international trade except under regulated circumstances. However, populations in Bhutan, India, Nepal, and Pakistan, along with domesticated forms (Canis lupus familiaris – domestic dogs, and Canis lupus dingo – Australian dingoes), are listed under Appendix I, granting them the highest level of protection.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

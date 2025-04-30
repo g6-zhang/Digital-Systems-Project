@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/phocidae.jpg" alt="Phocidae">
+            <p>The family Phocidae (scientific name: Phocidae), commonly known as true seals or earless seals, belongs to the order Carnivora and the clade Pinnipedia. Seals are streamlined, spindle-shaped marine mammals with limbs adapted into flippers. They have rounded heads, short necks, and lack external ear flaps. Their name derives from their leopard-like facial features. Common species include the spotted seal, harbor seal, and hooded seal.
+            </p>
+            <p>Seals are found in both hemispheres, inhabiting polar, subpolar, and temperate marine environments, except for the monk seals, which are found in warmer tropical waters. The Baikal seal is the only true freshwater seal species.The earliest known seal fossil, Leptophoca lenis, dates back to the late Oligocene or early Miocene (Aquitanian stage) in Italy. Other early seal fossils trace back 15 million years to the mid-Miocene of the North Atlantic.
+            </p>
+            <p>Previously, scientists believed that seals, sea lions, and walruses evolved separately, originating from otter-like ancestors such as Potamotherium, a semi-aquatic carnivore that lived in European freshwater lakes. However, recent evidence strongly suggests that all pinnipeds share a common monophyletic ancestor, likely most closely related to mustelids (weasels) and ursids (bears), particularly Enaliarctos, an early pinnipediform species.
+            </p>
+            <p>It was once thought that monk seals and elephant seals first entered the Pacific Ocean via the open seaway between North and South America, while Antarctic seals either followed the same route or migrated southward along the west coast of Africa. However, modern research suggests that monk seals, elephant seals, and Antarctic seals all evolved in the Southern Hemisphere before expanding to their current distributions.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

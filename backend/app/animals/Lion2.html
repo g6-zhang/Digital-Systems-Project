@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/Lion.jpg" alt="Lion">
+            <p>The lion (scientific name: Panthera leo), commonly known as the king of beasts, is a large feline species native to Africa and Asia, inhabiting tropical savannas, semi-desert regions, open woodlands, and shrublands. Its body is tawny-colored, with a dark tuft of fur at the tip of its tail. A distinguishing feature of male lions is their thick mane, which ranges from golden-brown to black, covering the neck and surrounding the face.
+            </p>
+            <p>Lions have the largest average body weight among living felines and rank second only to tigers in maximum body weight. In the wild, adult females typically weigh 110–150 kg, while males weigh 160–200 kg, with the largest males exceeding 270 kg. In captivity, lions can surpass 300 kg.
+            </p>
+            <p>Lions are the only truly social felines, forming prides that engage in cooperative hunting. Their primary prey includes zebras, antelopes, buffaloes, and warthogs, making them apex predators at the top of the food chain. Like tigers, lions are often referred to as "the king of beasts."
+            </p>
+            <p>Lions originated in Pleistocene Africa and expanded into West Asia, South Asia, and the Balkan Peninsula over the past 20,000 years. However, human expansion, habitat loss, and excessive hunting—especially by Europeans—have led to their extirpation in many regions. Today, wild lions are only found in sub-Saharan Africa and in India’s Gir National Park.Traditionally, African lions and Asian lions were considered distinct, but genetic studies reveal that lions from North Africa, West Africa, and Central Africa are more closely related to Asian lions than to East and South African lions.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

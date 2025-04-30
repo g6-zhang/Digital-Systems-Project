@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/strigiformes.jpg" alt="Strigiformes">
+            <p>Owls, also known as "Strigiformes" (scientific name: Strigiformes), are a group of birds of prey classified under the order Strigiformes. They are characterized by large eyes, a short but robust beak with a hooked tip, and a distinctive facial disc formed by specialized feather arrangements. Unlike most birds, owls have forward-facing binocular vision, which is a defining feature of this order. Some species also possess ear-like feather tufts.
+            </p>
+            <p>Owls are widely distributed across all continents except Antarctica, with the majority of species being nocturnal and carnivorous raptors.In Western cultures, particularly in Aegean and Christian traditions, owls are considered symbols of luck and wisdom. However, in Chinese culture, they are often associated with misfortune, fear, disloyalty, and rebellion, making them a negative omen. This cultural contrast is the opposite of bats, which are seen as symbols of good fortune in China but associated with darkness in Western cultures.
+            </p>
+            <p>The binocular vision, facial disc, and ear tufts of certain owl species give their heads a resemblance to those of cats, which is why they are commonly referred to as "猫头鹰" (literally "cat-headed eagle").Although the official modern Chinese character for owls is "鴞", the term "枭" appeared more frequently in ancient Chinese literature. For example, it is commonly seen in phrases like "枭雄", which refers to a powerful and ambitious leader, often with a ruthless or dominant nature.
+            </p>
+            <a href="/animals2" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

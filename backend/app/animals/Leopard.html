@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/Leopard.jpg" alt="Leopard">
+            <p>The leopard (scientific name: Panthera pardus) is a species of big cat in the genus Panthera. It has a wide distribution across Africa and Asia, exhibiting strong adaptability to different environments. Due to its elusive nature, the leopard’s overall population status is better than its feline relatives, such as lions, tigers, and cheetahs. However, some leopard subspecies are facing significant threats.
+            </p>
+            <p>The coat color of leopards varies by subspecies, ranging from pale yellow to golden or yellowish-brown. Their distinctive rosette-shaped spots have led to alternative names such as "panther" or "spotted leopard." Occasionally, leopards undergo melanism, a condition that results in increased black pigmentation, leading to the appearance of a black panther, though its spots remain faintly visible.
+            </p>
+            <p>Studies based on mitochondrial DNA sequences suggest that around 11.3 million years ago, the subfamily Pantherinae (big cats) and the subfamily Felinae (small cats) within the family Felidae diverged and began independent evolutionary paths. Approximately 8.66 million years ago, the Pantherinae further split into two genera: Neofelis (clouded leopards) and Panthera (true big cats).
+            </p>
+            <p>The genus Panthera currently includes five extant species: the tiger (Panthera tigris), lion (Panthera leo), jaguar (Panthera onca), snow leopard (Panthera uncia), and leopard (Panthera pardus). Among these, tigers were the first to diverge, an event that, despite the lack of fossil evidence, is commonly estimated to have occurred around 6.55 million years ago.Leopards diverged from this lineage approximately 4.36 million years ago, with the earliest known leopard (or lion) fossil, a tooth fragment, discovered in Tanzania, dating back to approximately 3.5 million years ago. This fossil evidence supports the widely accepted theory that leopards originated in Africa.
+            </p>
+            <p>Genetic studies on leopard subspecies indicate that African leopards exhibit the greatest genetic diversity, whereas the critically endangered Amur leopard possesses the lowest genetic diversity. Research also suggests that African leopards became a distinct subspecies between 825,000 and 470,000 years ago, while Asian leopard populations are relatively younger, emerging between 300,000 and 170,000 years ago. This evolutionary timeline supports the theory that leopards migrated from Africa, through the Arabian Peninsula, into Central Asia, and eventually spread to East Asia.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

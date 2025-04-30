@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear - Animal Introduction</title>
+    <base href="/">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        .animal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .animal-card h2 {
+            color: #2a9d8f;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .animal-card p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #2a9d8f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background: #1e7969;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="/images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="animal-container">
+        <div class="animal-card">
+            <h2>Bear</h2>
+            <img src="/images/bear.jpg" alt="Bear">
+            <p>Bears, scientifically known as Ursidae, are a family of large mammals belonging to the order Carnivora. Currently, this family comprises six genera and eight species. Except for Africa (where the Atlas bear went extinct in 1870), as well as Oceania and Antarctica, where no wild populations exist, bears are widely distributed across the Northern Hemisphere and parts of the Southern Hemisphere.
+            </p>
+            <p>Common characteristics of bears include a large and robust body, strong limbs, a long snout, thick fur, a short tail, plantigrade feet, and five curved, sharp, non-retractable claws on each paw (in contrast to felines, whose claws can retract). Polar bears are primarily carnivorous, while giant pandas mainly feed on bamboo and other plants but occasionally consume meat. Other bear species are omnivorous.
+            </p>
+            <p>Except for mother bears caring for cubs, bears generally lead solitary lives. They are mostly diurnal but may also be active at night or dawn, especially near human settlements. Bears possess an extremely keen sense of smell and, despite their seemingly clumsy appearance, can run at speeds of up to 40 km/h (25 mph) with remarkable endurance, adapting well to various climates and terrains. In autumn, after eating fermented fruit, bears may exhibit signs of intoxication. Bears require a shelter, such as a cave or a tree hollow, for hibernation during the winter, which can last up to 100 days.
+            </p>
+            <p>Since prehistoric times, humans have hunted bears for their meat and fur. Bears frequently appear in mythology, literature, and art. However, in modern society, due to habitat loss and illegal trade of bear products, they face increasing threats of extinction. Six bear species are classified as endangered or critically endangered, and brown bears have already become extinct in some regions.
+            </p>
+            <a href="/animals" class="back-button">← Back</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
