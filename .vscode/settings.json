@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Zoo Database",
+            "database": "zoo",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
+}
