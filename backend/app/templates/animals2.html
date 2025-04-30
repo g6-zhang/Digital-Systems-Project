@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Project - Zoo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0fff0, #e6f5e6);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #2a9d8f, #228b22);
+            color: white;
+            padding: 13px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #logo-container img {
+            width: 30px;
+            height: auto;
+            display: block;
+        }
+
+        #logo-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 6px 10px;
+            background-color: #32cd32;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #1e7969;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        nav ul li a:visited {
+            color: white; 
+        }
+
+        a.animal-link {
+            color: blue; 
+            text-decoration: none;
+        }
+
+        a.animal-link:visited,
+        a.animal-link:active {
+            color: blue; 
+        }
+
+        main {
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #228b22;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            position: relative;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            width: 300px;
+            padding: 10px 10px 15px;  
+            min-height: auto;  
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 70%; 
+            height: auto;  
+            aspect-ratio: 4 / 3; 
+            object-fit: contain;  
+        }
+
+
+        .card h3 {
+            margin: 5px 0 0;
+            color: #2a9d8f;
+            font-size: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .info-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .info-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .card .star {
+        font-size: 24px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 10;
+        user-select: none;
+        color: gold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/profile">User</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/animals2">Animal Introduction</a></li>
+                <li><a href="/map2">Map</a></li>
+                <li><a href="/tickets2">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Animal Information</h1>
+        <input type="text" id="searchInput" placeholder="Search for an animal..." 
+        style="width: 300px; padding: 8px; font-size: 16px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;">
+ 
+        <div class="info-container">
+            <div class="card">
+              <span class="star" data-animal="Bear">☆</span>
+              <img src="images/bear.jpg" alt="bear">
+              <h3><a href="/animals/bear2.html" class="animal-link">Bear</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Capra-aegagrus-hircus">☆</span>
+              <img src="images/capra-aegagrus-hircus.jpg" alt="capra-aegagrus-hircus">
+              <h3><a href="/animals/capra-aegagrus-hircus2.html" class="animal-link">Goat</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Cervus-nippon">☆</span>
+              <img src="images/cervus-nippon.jpg" alt="cervus-nippon">
+              <h3><a href="/animals/cervus-nippon2.html" class="animal-link">Sika deer</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Crocodilia">☆</span>
+              <img src="images/crocodilia.JPG" alt="crocodilia">
+              <h3><a href="/animals/crocodilia2.html" class="animal-link">Crocodile</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Cygnus">☆</span>
+              <img src="images/cygnus.jpg" alt="cygnus">
+              <h3><a href="/animals/cygnus2.html" class="animal-link">Swan</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Delphinidae">☆</span>
+              <img src="images/delphinidae.jpg" alt="delphinidae">
+              <h3><a href="/animals/delphinidae2.html" class="animal-link">Dolphin</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Elephantidae">☆</span>
+              <img src="images/elephantidae.jpg" alt="elephantidae">
+              <h3><a href="/animals/elephantidae2.html" class="animal-link">Elephant</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Folivora">☆</span>
+              <img src="images/folivora.jpg" alt="folivora">
+              <h3><a href="/animals/folivora2.html" class="animal-link">Sloth</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Fox">☆</span>
+              <img src="images/fox.jpg" alt="fox">
+              <h3><a href="/animals/fox2.html" class="animal-link">Fox</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Giraffe">☆</span>
+              <img src="images/giraffe.jpg" alt="giraffe">
+              <h3><a href="/animals/giraffe2.html" class="animal-link">Giraffe</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Gorilla">☆</span>
+              <img src="images/gorilla.jpg" alt="gorilla">
+              <h3><a href="/animals/gorilla2.html" class="animal-link">Gorilla</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Hippopotamus-amphibius">☆</span>
+              <img src="images/hippopotamus-amphibius.jpg" alt="hippopotamus-amphibius">
+              <h3><a href="/animals/hippopotamus-amphibius2.html" class="animal-link">Hippopotamus</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Kangaroo">☆</span>
+              <img src="images/kangaroo.jpg" alt="kangaroo">
+              <h3><a href="/animals/kangaroo2.html" class="animal-link">Kangaroo</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Koala">☆</span>
+              <img src="images/koala.jpg" alt="koala">
+              <h3><a href="/animals/koala2.html" class="animal-link">Koala</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Leopard">☆</span>
+              <img src="images/leopard.jpg" alt="leopard">
+              <h3><a href="/animals/leopard2.html" class="animal-link">Leopard</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Lion">☆</span>
+              <img src="images/lion.jpg" alt="lion">
+              <h3><a href="/animals/lion2.html" class="animal-link">Lion</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Panda">☆</span>
+              <img src="images/panda.jpg" alt="panda">
+              <h3><a href="/animals/panda2.html" class="animal-link">Panda</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Pavo">☆</span>
+              <img src="images/pavo.jpg" alt="pavo">
+              <h3><a href="/animals/pavo2.html" class="animal-link">Pavo</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Phocidae">☆</span>
+              <img src="images/phocidae.jpg" alt="phocidae">
+              <h3><a href="/animals/phocidae2.html" class="animal-link">Seal</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Phoenicopteridae">☆</span>
+              <img src="images/phoenicopteridae.jpg" alt="phoenicopteridae">
+              <h3><a href="/animals/phoenicopteridae2.html" class="animal-link">Flamingo</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Pongo">☆</span>
+              <img src="images/pongo.jpg" alt="pongo">
+              <h3><a href="/animals/pongo2.html" class="animal-link">Orangutan</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Raccoon">☆</span>
+              <img src="images/raccoon.jpg" alt="raccoon">
+              <h3><a href="/animals/raccoon2.html" class="animal-link">Raccoon</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Rhinocerotidae">☆</span>
+              <img src="images/rhinocerotidae.jpg" alt="rhinocerotidae">
+              <h3><a href="/animals/rhinocerotidae2.html" class="animal-link">Rhinoceros</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Sciuridae">☆</span>
+              <img src="images/sciuridae.jpg" alt="sciuridae">
+              <h3><a href="/animals/sciuridae2.html" class="animal-link">Squirrel</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Sphenisciformes">☆</span>
+              <img src="images/sphenisciformes.jpg" alt="sphenisciformes">
+              <h3><a href="/animals/sphenisciformes2.html" class="animal-link">Penguin</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Strigiformes">☆</span>
+              <img src="images/strigiformes.jpg" alt="strigiformes">
+              <h3><a href="/animals/strigiformes2.html" class="animal-link">Owl</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Sus-scrofa">☆</span>
+              <img src="images/sus-scrofa.JPG" alt="sus-scrofa">
+              <h3><a href="/animals/sus-scrofa2.html" class="animal-link">Wild Boar</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Tiger">☆</span>
+              <img src="images/tiger.jpg" alt="tiger">
+              <h3><a href="/animals/tiger2.html" class="animal-link">Tiger</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Wolf">☆</span>
+              <img src="images/wolf.jpg" alt="wolf">
+              <h3><a href="/animals/wolf2.html" class="animal-link">Wolf</a></h3>
+            </div>
+            <div class="card">
+              <span class="star" data-animal="Zebra">☆</span>
+              <img src="images/zebra.jpg" alt="zebra">
+              <h3><a href="/animals/zebra2.html" class="animal-link">Zebra</a></h3>
+            </div>
+          </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+          const stars = document.querySelectorAll(".star");
+
+          const res = await fetch("/favorites");
+          const favorites = await res.json();
+          const favSet = new Set(favorites);
+
+          stars.forEach(star => {
+            const name = star.dataset.animal;
+            if (favSet.has(name)) {
+              star.classList.add("favorited");
+              star.textContent = "★";
+            }
+
+            star.addEventListener("click", async () => {
+              const isFav = star.classList.contains("favorited");
+              const action = await fetch(`/favorites/toggle?animal_name=${encodeURIComponent(name)}`, {
+                method: "POST"
+              });
+              const result = await action.json();
+              if (result.status === "added") {
+                star.classList.add("favorited");
+                star.textContent = "★";
+              } else {
+                star.classList.remove("favorited");
+                star.textContent = "☆";
+              }
+            });
+          });
+        });
+
+        const searchInput = document.getElementById("searchInput");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            cards.forEach(card => {
+            const animalName = card.querySelector("h3 a").textContent.toLowerCase();
+            if (animalName.includes(query)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+            });
+        });
+        </script>        
+        
+</body>
+</html>

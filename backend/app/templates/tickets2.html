@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets - Roe's Zoo</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<style>
+    details[open] summary {
+      background-color: #c6e5f4; 
+      border-radius: 5px;
+    }
+
+    details {
+      margin: 10px 0;
+      background: #e6f4ea;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+  #payment-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .payment-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .payment-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .payment-tabs button {
+    font-weight: 600; 
+    padding: 10px 20px;
+    border: 2px solid #2a9d8f;
+    background-color: white;
+    color: #2a9d8f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .payment-tabs button.active {
+    border-color: #2a9d8f;       
+    background-color: white;
+    color: #2a9d8f;
+    font-weight: 600;
+    box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.2); 
+  }
+
+  .payment-tabs button:hover {
+    background-color: #f0fdfa;
+    border-color: #21867a;
+    color: #21867a;
+  }
+
+  .tab-content {
+    margin-top: 10px;
+  }
+
+  .tab-content img {
+    max-width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .payment-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .payment-confirm-btn {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .payment-confirm-btn:hover {
+    background-color: #21867a;
+  }
+
+  .payment-cancel-btn {
+    margin-top: 8px;
+    background: none;
+    color: #999;
+    border: none;
+    cursor: pointer;
+  }
+
+</style>
+  
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+          <ul>
+              <li><a href="/profile">User</a></li>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/animals2">Animal Introduction</a></li>
+              <li><a href="/map2">Map</a></li>
+              <li><a href="/tickets2">Tickets</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section style="padding: 60px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+
+            <div style="flex: 1 1 250px; max-width: 300px; background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+              <h3>Basic</h3>
+              <p style="font-size: 24px; font-weight: bold;">
+                  ￥<span id="basic-price">30</span>
+                  <button id="discount-btn" onclick="applyDiscount()" style="margin-left: 10px; font-size: 12px; padding: 4px 8px; background-color: #f39c12; color: white; border: none; border-radius: 4px; cursor: pointer; display: none;">
+                    Use discounts
+                  </button>
+              </p>
+              <p>Adult ticket for 1 person</p>
+              <button onclick="openPayment()" style="margin-top: 10px; padding: 10px 20px; border: none; background-color: #2a9d8f; color: white; border-radius: 4px; cursor: pointer;">Select</button>
+            </div>
+            
+            <div style="flex: 1 1 250px; max-width: 300px; background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+                <h3>Family</h3>
+                <p style="font-size: 24px; font-weight: bold;">￥100</p>
+                <p>2 adults + 2 children</p>
+                <button onclick="openPayment()" style="margin-top: 10px; padding: 10px 20px; border: none; background-color: #2a9d8f; color: white; border-radius: 4px; cursor: pointer;">Select</button>
+
+            </div>
+
+            <div style="flex: 1 1 250px; max-width: 300px; background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+                <h3>VIP</h3>
+                <p style="font-size: 24px; font-weight: bold;">￥200</p>
+                <p>Priority entry and gift pack</p>
+                <button onclick="openPayment()" style="margin-top: 10px; padding: 10px 20px; border: none; background-color: #2a9d8f; color: white; border-radius: 4px; cursor: pointer;">Select</button>
+
+            </div>
+        </section>
+        <section style="max-width: 700px; margin: 40px auto;">
+            <h2 style="text-align: center; color: #2a9d8f;">Frequently Asked Questions</h2>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">Can I get a refund after booking?</summary>
+              <p style="margin-top: 10px;">Tickets can be refunded up to 24 hours before your scheduled visit.</p>
+            </details>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">Are group discounts available?</summary>
+              <p style="margin-top: 10px;">Yes, we offer discounts for groups of 10 or more. Please contact us in advance.</p>
+            </details>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">Can I book tickets for another day?</summary>
+              <p style="margin-top: 10px;">Yes, you can select any available future date during the booking process.</p>
+            </details>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">Do I need to print my ticket?</summary>
+              <p style="margin-top: 10px;">No need to print. Just show the e-ticket or QR code on your mobile phone.</p>
+            </details>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">What are the zoo’s opening hours?</summary>
+              <p style="margin-top: 10px;">We are open daily from 9:00 AM to 6:00 PM, including weekends and holidays.</p>
+            </details>
+          
+            <details style="margin: 10px 0; background:#d0fadc; padding: 10px 15px; border-radius: 5px;">
+              <summary style="font-weight: bold; cursor: pointer;">Are pets allowed inside the zoo?</summary>
+              <p style="margin-top: 10px;">For safety reasons, pets are not allowed inside the zoo premises.</p>
+            </details>
+          </section>                
+    </main>
+
+    <script>
+      const allDetails = document.querySelectorAll("details");
+    
+      allDetails.forEach((targetDetail) => {
+        targetDetail.addEventListener("toggle", () => {
+          if (targetDetail.open) {
+            allDetails.forEach((detail) => {
+              if (detail !== targetDetail) {
+                detail.open = false;
+              }
+            });
+          }
+        });
+      });
+    </script>    
+
+    <footer>
+        <p>© 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+</body>
+
+<div id="payment-modal">
+  <div class="payment-box">
+    <h2>Choose Payment Method</h2>
+
+    <div class="payment-tabs">
+      <button class="tab-btn active" onclick="showTab('qr', this)">Scan QR</button>
+      <button class="tab-btn" onclick="showTab('wechat', this)">WeChat/Alipay</button>
+      <button class="tab-btn" onclick="showTab('card', this)">Bank Card</button>
+    </div>
+
+    <div id="tab-qr" class="tab-content">
+      <img src="images/qr-code.jpg" alt="QR Code">
+      <p>Scan with your phone to pay via linked bank card.</p>
+    </div>
+
+    <div id="tab-wechat" class="tab-content" style="display: none;">
+      <div style="display: flex; justify-content: space-around;">
+        <img src="images/wechat-icon.jpg" alt="WeChat" style="width: 100px;">
+        <img src="images/alipay-icon.jpg" alt="Alipay" style="width: 100px;">
+      </div>
+      <p>Scan using WeChat or Alipay to complete payment.</p>
+    </div>
+
+    <div id="tab-card" class="tab-content" style="display: none;">
+      <input type="text" class="payment-input" placeholder="Card Number">
+      <input type="text" class="payment-input" placeholder="Expiry Date (MM/YY)">
+      <input type="text" class="payment-input" placeholder="CVV">
+    </div>
+
+    <button class="payment-confirm-btn" onclick="confirmPayment()">Confirm Payment</button>
+    <br>
+    <button class="payment-cancel-btn" onclick="closePayment()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  
+  let hasDiscount = false;
+  let discountApplied = false;
+
+  function openPayment() {
+    document.getElementById("payment-modal").style.display = "flex";
+    showTab('qr');
+  }
+
+  function closePayment() {
+    document.getElementById("payment-modal").style.display = "none";
+  }
+
+  function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById('tab-' + tab).style.display = 'block';
+  }
+
+  async function confirmPayment() {
+  const modal = document.getElementById("payment-modal");
+  const selectedTicket = document.querySelector(".ticket-btn-selected")?.innerText || "Basic";
+
+  let ticketPrice = 0;
+  if (selectedTicket === "Basic") {
+    ticketPrice = parseInt(document.getElementById("basic-price").textContent);
+  } else if (selectedTicket === "Family") {
+    ticketPrice = 100;
+  } else if (selectedTicket === "VIP") {
+    ticketPrice = 200;
+  }
+
+  let paymentMethod = "QR";
+  const activeTab = document.querySelector(".tab-content:not([style*='display: none'])");
+  if (activeTab?.id === "tab-wechat") paymentMethod = "WeChat";
+  if (activeTab?.id === "tab-card") paymentMethod = "Card";
+
+  let cardData = {};
+  if (paymentMethod === "Card") {
+    const inputs = document.querySelectorAll('#tab-card .payment-input');
+    cardData = {
+      card_number: inputs[0].value,
+      expiry_date: inputs[1].value,
+      cvv: inputs[2].value
+    };
+    if (!cardData.card_number || !cardData.expiry_date || !cardData.cvv) {
+      alert("Please fill in all card details.");
+      return;
+    }
+  }
+
+  const response = await fetch("http://localhost:8080/tickets", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      ticket_type: selectedTicket,
+      ticket_price: ticketPrice,
+      payment_method: paymentMethod,
+      ...cardData
+    })
+  });
+
+  const result = await response.json();
+
+  if (discountApplied) {
+    try {
+      await fetch("/api/game/consume-discount", {
+        method: "POST"
+      });
+    } catch (err) {
+      console.error("Failed to record discount usage:", err);
+    }
+  }
+
+  if (response.ok) {
+    alert("Payment successful! Thank you.");
+    modal.style.display = "none";
+  } else {
+    alert(result.detail || "Payment failed.");
+  }
+}
+
+  window.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const res = await fetch("/api/game/result");
+    const data = await res.json();
+
+    if (data.has_earned_discount && !data.discount_used) {
+      hasDiscount = true;
+      document.getElementById("discount-btn").style.display = "inline-block";
+    }
+  } catch (err) {
+    console.error("The game result cannot be obtained:", err);
+  }
+});
+
+function applyDiscount() {
+  const priceSpan = document.getElementById("basic-price");
+  const discountBtn = document.getElementById("discount-btn");
+
+  if (!discountApplied) {
+    priceSpan.textContent = "20";
+    discountBtn.textContent = "Cancel Discount";
+    discountBtn.style.backgroundColor = "#bbb";
+    discountApplied = true;
+  } else {
+    priceSpan.textContent = "30";
+    discountBtn.textContent = "Use discounts";
+    discountBtn.style.backgroundColor = "#f39c12";
+    discountApplied = false;
+  }
+}
+
+</script>
+
+</html>
