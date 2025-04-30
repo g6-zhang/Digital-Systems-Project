@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Map - Roe's Zoo</title>
+
+    <link rel="stylesheet" href="styles/styles.css"> 
+    <style>
+        #map-container {
+            position: relative;
+            max-width: 90%;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 10px;
+        }
+
+        #map-container img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .animal-marker {
+            position: absolute;
+            font-size: 35px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+        }
+
+        .animal-marker:hover {
+            transform: scale(1.2);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .close-popup {
+            margin-top: 10px;
+            background: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .close-popup:hover {
+            background: #1e7969;
+        }
+
+        #popup #popup-image {
+        width: 80%;
+        max-width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .view-icon-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.2s ease;
+    }
+
+    .view-icon-btn:hover::after {
+        content: " View More";
+        font-size: 14px;
+        color: #333;
+        margin-left: 6px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="map-container">
+            <img src="images/map.jpg" alt="Zoo Map">
+
+            <div class="animal-marker" style="top: 38%; left: 16.6%;" data-animal="Bear">🐻</div>
+
+            <div class="animal-marker" style="top: 59%; left: 30%;" data-animal="Capra-aegagrus-hircus">🐐</div>
+
+            <div class="animal-marker" style="top: 59%; left: 36.9%;" data-animal="Cervus-nippon">🦌</div>
+
+            <div class="animal-marker" style="top: 33%; left: 66%;" data-animal="Crocodilia">🐊</div>
+
+            <div class="animal-marker" style="top: 38%; left: 32%;" data-animal="Cygnus">🦢</div>
+
+            <div class="animal-marker" style="top: 38%; left: 46.7%;" data-animal="Delphinidae">🐬</div>
+
+            <div class="animal-marker" style="top: 80%; left: 44%;" data-animal="Elephantidae">🐘</div>
+
+            <div class="animal-marker" style="top: 7%; left: 19%;" data-animal="Folivora">🦥</div>
+
+            <div class="animal-marker" style="top: 25%; left: 9%;" data-animal="Fox">🦊</div>
+
+            <div class="animal-marker" style="top: 70%; left: 55%;" data-animal="Giraffe">🦒</div>
+
+            <div class="animal-marker" style="top: 16.7%; left: 18%;" data-animal="Gorilla">🦍</div>
+
+            <div class="animal-marker" style="top: 84%; left: 52%;" data-animal="Hippopotamus-amphibius">🦛</div>
+
+            <div class="animal-marker" style="top: 76%; left: 60%;" data-animal="Kangaroo">🦘</div>
+
+            <div class="animal-marker" style="top: 15%; left: 11.5%;" data-animal="Koala">🐨</div>
+
+            <div class="animal-marker" style="top: 39%; left: 24%;" data-animal="Leopard">🐆</div>
+
+            <div class="animal-marker" style="top: 32%; left: 21%;" data-animal="Lion">🦁</div>
+
+            <div class="animal-marker" style="top: 42%; left: 54%;" data-animal="Panda">🐼</div>
+
+            <div class="animal-marker" style="top: 47%; left: 74%;" data-animal="Pavo">🦚</div>
+
+            <div class="animal-marker" style="top: 41%; left: 44.5%;" data-animal="Phocidae">🦭</div>
+
+            <div class="animal-marker" style="top: 58%; left: 54%;" data-animal="Phoenicopteridae">🦩</div>
+
+            <div class="animal-marker" style="top: 14%; left: 23%;" data-animal="Pongo">🦧</div>
+
+            <div class="animal-marker" style="top: 33.3%; left: 56%;" data-animal="Raccoon">🦝</div>
+
+            <div class="animal-marker" style="top: 65%; left: 63.5%;" data-animal="Rhinocerotidae">🦏</div>
+
+            <div class="animal-marker" style="top: 33%; left: 42%;" data-animal="Sciuridae">🐿️</div>
+
+            <div class="animal-marker" style="top: 48%; left: 46%;" data-animal="Sphenisciformes">🐧</div>
+
+            <div class="animal-marker" style="top: 62.5%; left: 50.5%;" data-animal="Strigiformes">🦉</div>
+
+            <div class="animal-marker" style="top: 72.5%; left: 67%;" data-animal="Sus-scrofa">🐗</div>
+
+            <div class="animal-marker" style="top: 23.5%; left: 16%;" data-animal="Tiger">🐅</div>
+
+            <div class="animal-marker" style="top: 47%; left: 22%;" data-animal="Wolf">🐺</div>
+
+            <div class="animal-marker" style="top: 59%; left: 46%;" data-animal="Zebra">🦓</div>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <h2 id="popup-title"></h2>
+        <button id="view-icon-btn" class="view-icon-btn" title="View More">🔍</button>
+        <img id="popup-image" src="" alt="Animal Image">
+        <p id="popup-content"></p>
+        <button class="close-popup" onclick="closePopup()">Close</button>
+    </div>    
+
+    <footer>
+        <p>© 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const markers = document.querySelectorAll('.animal-marker');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popup-title');
+        const popupContent = document.getElementById('popup-content');
+        const popupImage = document.getElementById('popup-image');
+        const viewIconBtn = document.getElementById('view-icon-btn');
+    
+        const animalData = {
+            Bear: {
+                name: "Bear",
+                image: "images/Bear.jpg",
+                description: "This animal is strong and covered with thick fur.",
+                link: "animals/Bear.html"
+            },
+            "Capra-aegagrus-hircus": {
+                name: "Goat",
+                image: "images/Capra-aegagrus-hircus.jpg",
+                description: "This animal is agile and often lives in rocky areas.",
+                link: "animals/Capra-aegagrus-hircus.html"
+            },
+            "Cervus-nippon": {
+                name: "Sika deer",
+                image: "images/Cervus-nippon.jpg",
+                description: "This animal has spotted fur and moves gracefully.",
+                link: "animals/Cervus-nippon.html"
+            },
+            Crocodilia: {
+                name: "Crocodile",
+                image: "images/Crocodilia.jpg",
+                description: "This reptile lives in rivers and has powerful jaws.",
+                link: "animals/Crocodilia.html"
+            },
+            Cygnus: {
+                name: "Swan",
+                image: "images/Cygnus.jpg",
+                description: "This bird has long neck and swims in lakes.",
+                link: "animals/Cygnus.html",
+                position: "right"
+            },
+            Delphinidae: {
+                name: "Dolphin",
+                image: "images/Delphinidae.jpg",
+                description: "This aquatic animal is intelligent and playful.",
+                link: "animals/Delphinidae.html"
+            },
+            Elephantidae: {
+                name: "Elephant",
+                image: "images/Elephantidae.jpg",
+                description: "This animal is large and has a long trunk.",
+                link: "animals/Elephantidae.html",
+                position: "center bottom"
+            },
+            Folivora: {
+                name: "Sloth",
+                image: "images/Folivora.jpg",
+                description: "This slow-moving animal lives in trees.",
+                link: "animals/Folivora.html"
+            },
+            Fox: {
+                name: "Fox",
+                image: "images/Fox.jpg",
+                description: "This small wild animal has a bushy tail.",
+                link: "animals/Fox.html"
+            },
+            Giraffe: {
+                name: "Giraffe",
+                image: "images/Giraffe.jpg",
+                description: "This animal has a very long neck and legs.",
+                link: "animals/Giraffe.html",
+                position: "top"
+            },
+            Gorilla: {
+                name: "Gorilla",
+                image: "images/Gorilla.jpg",
+                description: "This strong animal usually lives in groups.",
+                link: "animals/Gorilla.html"
+            },
+            "Hippopotamus-amphibius": {
+                name: "Hippopotamus",
+                image: "images/Hippopotamus-amphibius.jpg",
+                description: "This animal likes to stay in water and is very heavy.",
+                link: "animals/Hippopotamus-amphibius.html",
+                position: "center top"
+            },
+            Kangaroo: {
+                name: "Kangaroo",
+                image: "images/Kangaroo.jpg",
+                description: "This animal jumps with strong back legs.",
+                link: "animals/Kangaroo.html"
+            },
+            Koala: {
+                name: "Koala",
+                image: "images/Koala.jpg",
+                description: "This animal climbs trees and eats leaves.",
+                link: "animals/Koala.html"
+            },
+            Leopard: {
+                name: "Leopard",
+                image: "images/Leopard.jpg",
+                description: "This animal moves fast and has spotted fur.",
+                link: "animals/Leopard.html"
+            },
+            Lion: {
+                name: "Lion",
+                image: "images/Lion.jpg",
+                description: "This animal is strong and often called king of animals.",
+                link: "animals/Lion.html"
+            },
+            Panda: {
+                name: "Panda",
+                image: "images/Panda.jpg",
+                description: "This animal has black and white fur and eats bamboo.",
+                link: "animals/Panda.html"
+            },
+            Pavo: {
+                name: "Pavo",
+                image: "images/Pavo.jpg",
+                description: "This bird has bright feathers and spreads its tail.",
+                link: "animals/Pavo.html",
+                position: "center top"
+            },
+            Phocidae: {
+                name: "Seal",
+                image: "images/Phocidae.jpg",
+                description: "This animal lives near the sea and moves by sliding.",
+                link: "animals/Phocidae.html"
+            },
+            Phoenicopteridae: {
+                name: "Flamingo",
+                image: "images/Phoenicopteridae.jpg",
+                description: "This bird has long legs and stands in water.",
+                link: "animals/Phoenicopteridae.html"
+            },
+            Pongo: {
+                name: "Orangutan",
+                image: "images/Pongo.jpg",
+                description: "This animal has long arms and lives in trees.",
+                link: "animals/Pongo.html"
+            },
+            Raccoon: {
+                name: "Raccoon",
+                image: "images/Raccoon.jpg",
+                description: "This animal is active at night and has a mask-like face.",
+                link: "animals/Raccoon.html"
+            },
+            Rhinocerotidae: {
+                name: "Rhinoceros",
+                image: "images/Rhinocerotidae.jpg",
+                description: "This big animal has thick skin and a horn on its nose.",
+                link: "animals/Rhinocerotidae.html"
+            },
+            Sciuridae: {
+                name: "Squirrel",
+                image: "images/Sciuridae.jpg",
+                description: "This small animal is quick and lives in trees.",
+                link: "animals/Sciuridae.html"
+            },
+            Sphenisciformes: {
+                name: "Penguin",
+                image: "images/Sphenisciformes.jpg",
+                description: "This bird cannot fly and likes cold places.",
+                link: "animals/Sphenisciformes.html"
+            },
+            Strigiformes: {
+                name: "Owl",
+                image: "images/Strigiformes.jpg",
+                description: "This bird is active at night and has sharp eyes.",
+                link: "animals/Strigiformes.html"
+            },
+            "Sus-scrofa": {
+                name: "Wild Boar",
+                image: "images/Sus-scrofa.jpg",
+                description: "This animal lives in forests and has tusks.",
+                link: "animals/Sus-scrofa.html"
+            },
+            Tiger: {
+                name: "Tiger",
+                image: "images/Tiger.jpg",
+                description: "This animal has orange fur with black stripes.",
+                link: "animals/Tiger.html",
+                position: "left"
+            },
+            Wolf: {
+                name: "Wolf",
+                image: "images/Wolf.jpg",
+                description: "This animal lives in groups and howls at night.",
+                link: "animals/Wolf.html"
+            },
+            Zebra: {
+                name: "Zebra",
+                image: "images/Zebra.jpg",
+                description: "This animal has black and white stripes.",
+                link: "animals/Zebra.html"
+            }
+        };
+
+        markers.forEach(marker => {
+        marker.addEventListener('click', () => {
+            const animal = marker.getAttribute('data-animal');
+            const data = animalData[animal];
+            if (data) {
+                popupTitle.textContent = data.name;
+                popupContent.textContent = data.description;
+                popupImage.src = data.image;
+                popupImage.style.objectPosition = data.position || "center"; 
+                viewIconBtn.onclick = () => {
+                window.location.href = data.link;
+                };
+                popup.classList.add('active');
+            }
+        });
+    });
+
+    
+        function closePopup() {
+            popup.classList.remove('active');
+        }
+    </script>
+    
+</body>
+</html>

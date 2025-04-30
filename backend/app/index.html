@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Project - Zoo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0fff0, #e6f5e6);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #2a9d8f, #228b22);
+            color: white;
+            padding: 13px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #logo-container img {
+            width: 30px;
+            height: auto;
+            display: block;
+        }
+
+        #logo-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #welcome-message {
+            background-color: #f0fff0;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            border-bottom: 2px solid #228b22;
+            margin-top: 50px;
+        }
+
+        #welcome-message p {
+            margin: 0;
+        }
+
+        #welcome-message a {
+            color: #2a9d8f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        #welcome-message a:hover {
+            color: #1e7969;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 6px 10px;
+            background-color: #32cd32;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #1e7969;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        #banner {
+            max-width: 1000px;
+            margin: 20px auto 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #banner .slides img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #content {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #2a9d8f;
+        }
+
+        .card p {
+            padding: 0 10px 20px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/logo.jpg" alt="Zoo Logo">
+            <h1>Roe's Zoo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals">Animal Introduction</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+    <div id="welcome-message">
+        <p>Welcome to Roe's Zoo Website! <a href="/login" id="login-link">[User Login]</a></p>
+    </div>
+
+    <section id="banner">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="images/Zoo Scenery 1.jpg" alt="Giraffe">
+                    <div class="caption">Welcome to Roe's Zoo - Discover the wildlife!</div>
+                </li>
+                <li>
+                    <img src="images/Zoo Scenery 2.jpg" alt="Zebras">
+                    <div class="caption">Enjoy the beautiful habitats we create for our animals.</div>
+                </li>
+                <li>
+                    <img src="images/Zoo Scenery 3.jpg" alt="Lion">
+                    <div class="caption">Explore, learn, and connect with nature.</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="card">
+            <img src="images/Time.png" alt="Time">
+            <h3>Opening hours</h3>
+            <p>Opening daily from 9:00 AM to 6:00 PM, including weekends and holidays.</p>
+        </div>
+        <div class="card">
+            <img src="images/Gift.png" alt="Gift">
+            <h3>Opening activity</h3>
+            <p>There are plenty of activities to offer every visitor.</p>
+        </div>
+        <div class="card">
+            <img src="images/Game.jpg" alt="Game">
+            <h3>User registration</h3>
+            <p>Registered users can provide fare discounts and benefits.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Roe's Zoo. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery.flexslider-min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                slideshow: true,
+                slideshowSpeed: 3000,
+                animationSpeed: 600,
+                controlNav: true,
+                directionNav: true,
+                pauseOnHover: true
+            });
+        });
+    </script>
+</body>
+</html>
